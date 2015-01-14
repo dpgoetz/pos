@@ -1,0 +1,7 @@
+# Example of changes needed to swift's proxy-server.conf
+[pipeline:main]
+pipeline = healthcheck cache tempauth pos proxy-server
+# if using slo/dlo/staticweb, put pos to the left of them
+
+[filter:sos]
+use = egg:pos#pos
